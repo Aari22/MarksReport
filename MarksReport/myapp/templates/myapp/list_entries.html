@@ -1,0 +1,32 @@
+{% extends 'myapp/subject_details.html' %}
+
+{% block content %}
+<!--  <form action="{% url 'list_entries' %}" method="post">-->
+<!--    {% csrf_token %}-->
+<!--    <button type="submit" class="btn btn-primary">List My Entries</button>-->
+<!--  </form>-->
+
+  {% if user_entries %}
+    <div>
+      <center>
+      <table>
+        <tr>
+          <th>Subject</th>
+          <th>Total Marks (Max.)</th>
+          <th>Marks Obtained</th>
+        </tr>
+      {% for entry in user_entries %}
+        <tr>
+<!--          <center><p>{{ entry.subject }} - {{ entry.total_marks }} - {{ entry.marks_obtained }}</p></center>-->
+          <td>{{ entry.subject }}</td>
+          <td>{{ entry.total_marks }}</td>
+          <td>{{ entry.marks_obtained }}</td>
+        </tr>
+      {% endfor %}
+      </table>
+        </center>
+    </div>
+  {% else %}
+    <p>No entries found.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="text-center">Login</h4>
+          </div>
+          <div class="card-body">
+            <form method="POST" action="{% url 'login' %}" onsubmit="return validateForm()">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="user_id">UserID</label>
+                <input type="number" class="form-control" id="user_id" name="user_id" placeholder="Enter your user_id" autofocus>
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Login</button>
+              </div>
+              <div class="text-center mt-3">
+                <a href="register/">Create New User ?</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add the Bootstrap JavaScript scripts if needed -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  <script>
+      // JavaScript function to display a pop-up error message
+      function displayErrorMessage() {
+          alert('Wrong password entered. Please try again.');
+      }
+
+      // JavaScript function to validate the form
+      function validateForm() {
+          const password = document.getElementById('password').value;
+          if (!password) {
+              alert('Password field cannot be blank. Please enter your password.');
+              return false; // Prevent form submission
+          }
+          // If all checks passed, the form will be submitted
+          return true;
+      }
+
+      {% if wrong_password %}
+      displayErrorMessage();
+      {% endif %}
+  </script>
+
+  <script>
+    {% if registration_message %}
+      alert("{{ registration_message }}");
+    {% endif %}
+  </script>
+</body>
+</html>
