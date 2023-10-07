@@ -82,13 +82,15 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'marks_db',
+            'NAME': 'railway',
             'USER': 'root',
-            'PASSWORD': 'Aaryan22$',
-            'HOST': 'localhost',
-            'PORT': '3306',
+            'PASSWORD': 'kD2rcdmRVusguiyNdSLz',
+            'HOST': 'containers-us-west-167.railway.app',
+            'PORT': '6056',
         }
     }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
