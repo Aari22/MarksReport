@@ -75,9 +75,7 @@ MarkupSafe
 matplotlib
 matplotlib-inline
 mistune
-mysql-connector
-mysql-connector-python
-mysqlclient
+
 nbclassic
 nbclient
 nbconvert
