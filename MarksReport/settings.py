@@ -81,12 +81,12 @@ if 'DATABASE_URL' in os.environ:
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.mysql',
+            'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'railway',
-            'USER': 'root',
-            'PASSWORD': 'kD2rcdmRVusguiyNdSLz',
-            'HOST': 'containers-us-west-167.railway.app',
-            'PORT': '6056',
+            'USER': 'postgres',
+            'PASSWORD': 'FSmbk3FMh6IQGHP4E3il',
+            'HOST': 'containers-us-west-185.railway.app',
+            'PORT': '5980',
         }
     }
 
