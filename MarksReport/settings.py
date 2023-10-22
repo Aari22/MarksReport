@@ -76,18 +76,7 @@ WSGI_APPLICATION = 'MarksReport.wsgi.application'
 import dj_database_url
 import os
 
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'railway',
-            'USER': 'postgres',
-            'PASSWORD': 'FSmbk3FMh6IQGHP4E3il',
-            'HOST': 'containers-us-west-185.railway.app',
-            'PORT': '5980',
-        }
+DATABASES = {
     }
 
 
